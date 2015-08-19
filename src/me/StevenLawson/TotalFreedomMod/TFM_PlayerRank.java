@@ -8,15 +8,21 @@ import org.bukkit.entity.Player;
 
 public enum TFM_PlayerRank
 {
-    DEVELOPER("a " + ChatColor.DARK_PURPLE + "Developer", ChatColor.DARK_PURPLE + "[Dev]"),
-    IMPOSTOR("an " + ChatColor.YELLOW + ChatColor.UNDERLINE + "Impostor", ChatColor.YELLOW.toString() + ChatColor.UNDERLINE + "[IMP]"),
-    NON_OP("a " + ChatColor.GREEN + "Non-OP", ChatColor.GREEN.toString()),
-    OP("an " + ChatColor.RED + "OP", ChatColor.RED + "[OP]"),
-    SUPER("a " + ChatColor.GOLD + "Super Admin", ChatColor.GOLD + "[SA]"),
-    TELNET("a " + ChatColor.DARK_GREEN + "Super Telnet Admin", ChatColor.DARK_GREEN + "[STA]"),
-    SENIOR("a " + ChatColor.LIGHT_PURPLE + "Senior Admin", ChatColor.LIGHT_PURPLE + "[SrA]"),
-    OWNER("the " + ChatColor.BLUE + "Owner", ChatColor.BLUE + "[Owner]"),
-    CONSOLE("The " + ChatColor.DARK_PURPLE + "Console", ChatColor.DARK_PURPLE + "[Console]");
+    DEVELOPER("a " + ChatColor.DARK_PURPLE + "Developer", ChatColor.DARK_PURPLE + "(Developer)"),
+    IMPOSTOR("an " + ChatColor.GRAY + ChatColor.UNDERLINE + "Impostor", ChatColor.GRAY.toString() + ChatColor.UNDERLINE + "(Imp)"),
+    NON_OP("a " + ChatColor.WHITE + "Non-OP", ChatColor.WHITE.toString()),
+    OP("an " + ChatColor.RED + "OP", ChatColor.RED + "(Op)"),
+    SUPER("an " + ChatColor.YELLOW + "Admin", ChatColor.YELLOW + "(Admin)"),
+    TELNET("a " + ChatColor.AQUA + "Super Admin", ChatColor.AQUA + "(Super Admin)"),
+    SENIOR("a " + ChatColor.LIGHT_PURPLE + "Senior Admin", ChatColor.LIGHT_PURPLE + "(Senior Admin)"),
+    OWNER("the " + ChatColor.BLUE + "Owner", ChatColor.BLUE + "(Owner)"),
+    EXEC("an " + ChatColor.GOLD + "Executive", ChatColor.GOLD + "(Executive)"),
+    SYS("a " + ChatColor.DARK_PURPLE + "System Admin", ChatColor.DARK_PURPLE + "(Sys-Admin)"),
+    SPEC("a " + ChatColor.GREEN + "Specialist", ChatColor.GREEN + "(Specialist)"),
+    ADMINM("the " + ChatColor.DARK_RED + "Admin Manager", ChatColor.DARK_RED + "(Admin Manager)"),
+    FOUNDER("the " + ChatColor.BLUE + "Founder", ChatColor.BLUE + "(Founder)"),
+    COOWNER("the " + ChatColor.BLUE + "Co-Owner", ChatColor.BLUE + "(Co-Owner)"),
+    CONSOLE("The " + ChatColor.DARK_PURPLE + "Console", ChatColor.DARK_PURPLE + "(CONSOLE)");
     private final String loginMessage;
     private final String prefix;
 
@@ -92,6 +98,22 @@ public enum TFM_PlayerRank
             else
             {
                 rank = SUPER;
+            }
+            if (sender.getName().equals("xYurippe"))
+            {
+                return EXEC;
+            }
+            if (sender.getName().equals("DarkHorse108"))
+            {
+                return ADMINM;
+            }
+            if (sender.getName().equals("Cyro1999"))
+            {
+                return COOWNER;
+            }
+            if (sender.getName().equals("NL_Fenix_NL"))
+            {
+                return FOUNDER;
             }
         }
         else
